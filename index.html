@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Access - TECH SEEKER ACADEMY</title>
+    <title>Course & Payment - TECH SEEKER ACADEMY</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
         .font-bangla { font-family: 'Hind Siliguri', sans-serif; }
         .font-teko { font-family: 'Teko', sans-serif; }
         
-        /* Consistent Header Style */
+        /* Header Text Style */
         .header-container {
             padding-top: 2rem;
             padding-bottom: 2rem;
@@ -21,6 +21,7 @@
             border-radius: 10px;
             animation: header-border-spark 8s linear infinite;
         }
+
         .header-title {
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 700;
@@ -29,49 +30,59 @@
             text-transform: uppercase;
             white-space: nowrap;
         }
-        .header-title .letter { display: inline-block; transition: transform 0.3s ease, color 0.3s ease; }
-        .header-title:hover .letter { transform: translateY(-10px); }
+        
+        .header-title .letter {
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .header-title:hover .letter {
+            transform: translateY(-10px);
+        }
+
         .header-title .letter.white { color: #ffffff; }
         .header-title .letter.orange { color: #f97316; }
         .header-title .letter.space { margin: 0 0.1em; }
-        .header-title .letter:hover { transform: translateY(-20px) scale(1.1); color: #22d3ee; }
-        .spark-source { animation: text-spark 8s linear infinite; }
 
+        .header-title .letter:hover {
+            transform: translateY(-20px) scale(1.1);
+            color: #22d3ee;
+        }
+        .spark-source {
+            animation: text-spark 8s linear infinite;
+        }
+
+        /* Spark Animation */
         @keyframes text-spark {
             0%, 100% { text-shadow: none; }
-            50% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #22d3ee, 0 0 80px #22d3ee; }
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #22d3ee, 0 0 80px #22d3ee;
+            }
         }
         @keyframes header-border-spark {
             0%, 100% { border-color: transparent; box-shadow: none; }
-            50% { border-color: #22d3ee; box-shadow: 0 0 20px #22d3ee, inset 0 0 10px #22d3ee; }
+            50% {
+                border-color: #22d3ee;
+                box-shadow: 0 0 20px #22d3ee, inset 0 0 10px #22d3ee;
+            }
+        }
+        
+        .highlight-glow {
+            animation: glowing-text 2s infinite ease-in-out;
         }
 
-        /* Video Container for responsive embedding */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        @keyframes glowing-text {
+            0% {
+                text-shadow: 0 0 5px rgba(74, 222, 128, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(74, 222, 128, 1), 0 0 25px rgba(74, 222, 128, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 5px rgba(74, 222, 128, 0.4);
+            }
         }
 
-        /* Orange Glow Effect for Motivational Text */
-        .glowing-orange {
-            color: #f97316; /* Tailwind orange-500 */
-            animation: orange-glow 2s infinite ease-in-out;
-        }
-        @keyframes orange-glow {
-            0%, 100% { text-shadow: 0 0 5px rgba(249, 115, 22, 0.4); }
-            50% { text-shadow: 0 0 20px rgba(249, 115, 22, 1), 0 0 30px rgba(249, 115, 22, 0.7); }
-        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -79,7 +90,8 @@
     <!-- Header Section -->
     <header class="bg-black shadow-lg shadow-cyan-500/20">
         <div class="text-center px-4 header-container w-full">
-             <a href="leatest index page with both effect.html" class="header-title font-teko inline-block">
+            <!-- ***** CORRECTED LINK HERE ***** -->
+            <a href="index.html" class="header-title font-teko inline-block">
                 <span class="letter white">T</span><span class="letter white">E</span><span class="letter white">C</span><span class="letter white">H</span>
                 <span class="letter space"></span>
                 <span class="letter orange">S</span><span class="letter orange">E</span><span class="letter orange">E</span><span class="letter orange">K</span><span class="letter orange">E</span><span class="letter orange">R</span>
@@ -91,60 +103,267 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-16">
-        
-        <!-- Welcome Message -->
-        <div class="text-center mb-12">
-            <!-- Updated Course Name -->
-            <h1 class="text-4xl md:text-5xl font-bold text-purple-400 font-bangla">"Viral 3D Shorts AI Automation Mastery" কোর্সে আপনাকে স্বাগতম!</h1>
-            <p class="text-2xl md:text-3xl font-bold glowing-orange font-bangla mt-4">অভিনন্দন! আপনি আপনার জীবনের সেরা সিদ্ধান্তটি নিয়েছেন।</p>
-            <p class="text-xl text-gray-300 mt-4 font-bangla">আপনার সফলতার যাত্রায় আমরা আপনাকে স্বাগত জানাই। নিচে আপনার কোর্সের ওয়েলকাম ভিডিও এবং প্রয়োজনীয় রিসোর্স দেওয়া হলো।</p>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            
+            <!-- Left Column: Course Details -->
+            <div class="lg:col-span-3 bg-black rounded-xl p-8 shadow-lg shadow-cyan-500/20">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-cyan-400 uppercase">Viral 3D Shorts AI Automation Mastery- Dominate USA Market</h1>
+                    <p class="text-lg text-gray-300 mt-2 font-bangla">কোর্স নং: TSA-01</p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-bangla uppercase">কোর্সের সম্পূর্ণ স্ট্র্যাটেজি:</h2>
+                    <ul class="space-y-4 text-gray-300 text-lg font-bangla">
+                        <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ১: ভাইরাল টপিক রিসার্চের গোপন কৌশল</strong>
+                            কীভাবে এমন টপিক খুঁজে বের করবেন যা মানুষ দেখতে বাধ্য হবে, সেই গোপন কৌশলগুলো এখানে শেখানো হবে।
+                        </li>
+                         <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ২: AI দিয়ে প্রফেশনাল স্ক্রিপ্ট রাইটিং</strong>
+                            আমাদের শেখানো পদ্ধতিতে AI ব্যবহার করে আপনি এমন স্ক্রিপ্ট তৈরি করতে পারবেন যা দর্শকের মনোযোগ ধরে রাখবে।
+                        </li>
+                        <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ৩: বিনামূল্যে 3D অ্যানিমেশন তৈরি</strong>
+                            বিনামূল্যে AI টুল ব্যবহার করে কীভাবে প্রফেশনাল মানের AI 3D অ্যানিমেশন ভিডিও বানানো যায়, তার সম্পূর্ণ প্রক্রিয়া দেখানো হবে।
+                        </li>
+                        <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ৪: আকর্ষণীয় ভয়েসওভার ও সাউন্ড ডিজাইন</strong>
+                            আপনার ভিডিওকে আরও আকর্ষণীয় করে তোলার জন্য প্রফেশনাল ভয়েসওভার এবং সাউন্ড ডিজাইনের কৌশল শেখানো হবে।
+                        </li>
+                        <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ৫: ভিডিওকে ইউনিক ও মনিটাইজেশন-ফ্রেন্ডলি করা</strong>
+                            বিশেষ কৌশলের মাধ্যমে আপনার ভিডিওকে কপি বা রি-ইউজড কনটেন্টের সমস্যা থেকে মুক্ত রাখার পদ্ধতি দেখানো হবে।
+                        </li>
+                         <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ৬: US দর্শকের জন্য চ্যানেল অপটিমাইজেশন</strong>
+                            কীভাবে আপনার চ্যানেলকে US দর্শকের জন্য SEO করে র‍্যাঙ্ক করাবেন, তার সম্পূর্ণ গাইডলাইন দেওয়া হবে।
+                        </li>
+                         <li class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            <strong class="text-cyan-400 block mb-1">ধাপ ৭: প্রমাণিত কন্টেন্ট স্ট্র্যাটেজি ও সফলতা</strong>
+                            মাত্র ৩-6 মাসে আপনার চ্যানেলকে সফল করার জন্য একটি প্রমাণিত কন্টেন্ট আপলোড করার প্ল্যান শেয়ার করা হবে, যাতে আপনি  $১০০০ ডলারের ইনকাম জেনারেট করতে পারেন।
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Payment Details -->
+            <div class="lg:col-span-2">
+                <div class="bg-black rounded-xl p-8 shadow-lg shadow-green-500/20 sticky top-8">
+                    <div class="text-center border-b border-gray-700 pb-6">
+                        <h1 class="text-3xl font-bold text-green-400 font-bangla">পেমেন্ট করার নিয়মাবলী</h1>
+                    </div>
+
+                    <div class="mt-8 space-y-5 text-gray-300 font-bangla text-lg">
+                        <p>জয়েনিং ফি <strong class="text-green-400">3500 টাকা</strong> নিচের নিয়মে Send Money করতে হবে।</p>
+                        
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <p class="text-xl">Bkash/Rocket/Nagod Number:</p>
+                            <div class="flex items-center justify-center my-2">
+                                <p id="paymentNumber" class="text-3xl font-bold text-cyan-400 tracking-widest">01774108214</p>
+                                <button id="copyBtn" class="ml-4 bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-bold py-1 px-3 rounded-md transition-all duration-300">
+                                    Copy
+                                </button>
+                            </div>
+                            <p class="text-lg">(Payment Method: <span class="text-green-400 font-bold highlight-glow">Send Money</span> - Personal)</p>
+                        </div>
+
+                        <!-- ***** UPDATED INSTRUCTIONS SECTION ***** -->
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-2">টাকা পাঠানোর পর করণীয়:</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                                <li>টাকা পাঠানো সফল হলে, পেমেন্টের একটি স্পষ্ট <strong class="text-yellow-400">স্ক্রিনশট</strong> নিন।</li>
+                                <li>নিচের বক্স থেকে আপনার নাম, ইমেইল ও ফোন নম্বর পূরণ করে <strong class="text-yellow-400">"তথ্য কপি করুন"</strong> বাটনে ক্লিক করুন।</li>
+                                <li>সবশেষে, কপি করা তথ্য এবং পেমেন্টের স্ক্রিনশটটি একসাথে নিচের যেকোনো একটি মাধ্যমে পাঠিয়ে দিন।</li>
+                            </ul>
+                        </div>
+                        <!-- ***** END OF UPDATED SECTION ***** -->
+
+                        <div class="flex flex-col gap-4 justify-center">
+                             <a href="https://web.facebook.com/messages/t/106696837796420/" target="_blank" class="text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                                ফেসবুক পেজে মেসেজ দিন
+                            </a>
+                            <a href="https://wa.me/message/K4UWIP55B2XGP1" target="_blank" class="text-center bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105">
+                                হোয়াটসঅ্যাপে মেসেজ দিন
+                            </a>
+                            <a href="https://t.me/tasints" target="_blank" class="text-center bg-sky-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105">
+                                টেলিগ্রামে মেসেজ দিন
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-2">আপনার তথ্য পূরণ করুন:</h3>
+                            <div id="messageTemplate" class="bg-gray-800 p-4 rounded-lg space-y-3">
+                                <p><strong class="text-gray-400">COURSE NO:</strong> TSA-01</p>
+                                
+                                <div class="flex flex-col">
+                                    <label for="userName" class="text-gray-400 text-sm font-bold mb-1">YOUR NAME:</label>
+                                    <input type="text" id="userName" name="userName" placeholder="আপনার সম্পূর্ণ নাম লিখুন" class="bg-gray-900 border border-gray-700 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <label for="userEmail" class="text-gray-400 text-sm font-bold mb-1">YOUR E-mail:</label>
+                                    <input type="email" id="userEmail" name="userEmail" placeholder="আপনার ইমেইল অ্যাড্রেস" class="bg-gray-900 border border-gray-700 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <label for="userMobile" class="text-gray-400 text-sm font-bold mb-1">YOUR Mobile No:</label>
+                                    <input type="tel" id="userMobile" name="userMobile" placeholder="আপনার ফোন নম্বর" class="bg-gray-900 border border-gray-700 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5">
+                                </div>
+                                
+                                <button id="copyMessageBtn" class="w-full mt-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300">
+                                    তথ্য কপি করুন
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700 pt-5">
+                             <div class="bg-yellow-900/30 border border-yellow-500/50 text-yellow-300 p-4 rounded-lg hover:bg-yellow-900/50 transition-colors duration-300">
+                                <p class="font-semibold">আপনার পেমেন্ট যাচাই করার পর আপনাকে কোর্সের লিংক পাঠিয়ে দেওয়া হবে। যেকোনো প্রশ্ন থাকলে ইনবক্সে যোগাযোগ করুন এবং ফি দেওয়ার আগে, জেনে বুঝে তারপর পেমেন্ট করুন।</p>
+                                <p class="text-center mt-4 text-xl font-semibold">ধন্যবাদ!</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Course Video Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-purple-400 mb-6 text-center font-bangla">আপনার জন্য একটি বিশেষ বার্তা</h2>
-            <div class="video-container bg-black rounded-xl shadow-lg shadow-purple-500/30 mx-auto max-w-4xl border-2 border-purple-800">
-                <!-- 
-                    নির্দেশিকা: 
-                    1. আপনার আনলিস্টেড ইউটিউব ভিডিও-তে যান।
-                    2. 'Share' বাটনে ক্লিক করুন, তারপর 'Embed' অপশনটি সিলেক্ট করুন।
-                    3. Embed code-এর src="" এট্রিবিউটের ভেতর থেকে শুধু ভিডিও ID-টি (যেমন: dQw4w9WgXcQ) কপি করুন।
-                    4. নিচের "YOUR_UNLISTED_VIDEO_ID" লেখাটির জায়গায় আপনার কপি করা ID-টি পেস্ট করুন।
-                -->
-                <iframe src="https://www.youtube.com/embed/YOUR_UNLISTED_VIDEO_ID" title="Course Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <!-- Download Section -->
-        <section>
-            <h2 class="text-3xl font-bold text-green-400 mb-6 text-center font-bangla">প্রয়োজনীয় রিসোর্স ডাউনলোড</h2>
-            <div class="max-w-2xl mx-auto bg-black rounded-xl p-8 shadow-lg shadow-green-500/20 text-center border-2 border-green-800">
-                <p class="text-lg text-gray-300 mb-6 font-bangla">
-                    এই ফোল্ডারের ভেতর কোর্সটি করার জন্য প্রয়োজনীয় সফটওয়্যার এবং গাইডলাইন দেওয়া আছে।
-                </p>
-                <!-- 
-                    Mega.nz folder link has been updated below.
-                -->
-                <a href="https://mega.nz/folder/JkB02TxJ#OUrODtpqeC7tUQhVBpgUWQ" target="_blank" class="inline-flex items-center justify-center bg-green-600 text-white font-bold text-xl py-4 px-8 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/40">
-                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    ডাউনলোড করুন (Course Folder)
-                </a>
-            </div>
-        </section>
-        
-        <!-- Support Section -->
-        <section class="mt-16 text-center text-gray-400 font-bangla">
-             <p>ডাউনলোড বা ভিডিও দেখতে কোনো সমস্যা হলে আমাদের <a href="https://web.facebook.com/messages/t/106696837796420/" target="_blank" class="text-cyan-400 hover:underline">ফেসবুক পেজে</a>, <a href="https://wa.me/message/K4UWIP55B2XGP1" target="_blank" class="text-green-400 hover:underline">হোয়াটসঅ্যাপে</a>, অথবা <a href="https://t.me/tasints" target="_blank" class="text-sky-400 hover:underline">টেলিগ্রামে</a> যোগাযোগ করুন।</p>
-        </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-cyan-500/30 py-8 mt-16">
+    <footer class="bg-black border-t border-cyan-500/30 py-8">
         <div class="container mx-auto text-center text-gray-400">
-             <p>&copy; 2025 TECH SEEKER ACADEMY. All Rights Reserved.</p>
+            <p class="font-bangla text-xl mb-4">আমাদের সাথে যুক্ত হন</p>
+            <div class="flex justify-center items-start space-x-6 mb-6">
+                <a href="https://www.whatsapp.com/channel/0029VbB1wvIB4hdaHwPZg224" target="_blank" class="flex flex-col items-center transition-transform transform hover:scale-110" aria-label="WhatsApp">
+                    <img src="whatsapp.png" alt="WhatsApp" class="w-10 h-10">
+                    <span class="text-xs mt-1">WhatsApp</span>
+                </a>
+                <a href="https://shorturl.at/RqzYI" target="_blank" class="flex flex-col items-center transition-transform transform hover:scale-110" aria-label="Facebook">
+                    <img src="facebook.png" alt="Facebook" class="w-10 h-10">
+                    <span class="text-xs mt-1">Facebook</span>
+                </a>
+                <a href="https://t.me/techseekertasin" target="_blank" class="flex flex-col items-center transition-transform transform hover:scale-110" aria-label="Telegram">
+                    <img src="telegram.png" alt="Telegram" class="w-10 h-10">
+                    <span class="text-xs mt-1">Telegram</span>
+                </a>
+                <a href="https://www.youtube.com/@techseeker-tasin" target="_blank" class="flex flex-col items-center transition-transform transform hover:scale-110" aria-label="YouTube">
+                    <img src="youtube.png" alt="YouTube" class="w-10 h-10">
+                    <span class="text-xs mt-1">YouTube</span>
+                </a>
+            </div>
+            <p>&copy; 2025 TECH SEEKER ACADEMY. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyBtn = document.getElementById('copyBtn');
+            const paymentNumber = document.getElementById('paymentNumber');
+
+            copyBtn.addEventListener('click', () => {
+                const numberToCopy = paymentNumber.innerText;
+                
+                const textArea = document.createElement('textarea');
+                textArea.value = numberToCopy;
+                
+                textArea.style.position = 'fixed';
+                textArea.style.top = '0';
+                textArea.style.left = '0';
+                textArea.style.width = '2em';
+                textArea.style.height = '2em';
+                textArea.style.padding = '0';
+                textArea.style.border = 'none';
+                textArea.style.outline = 'none';
+                textArea.style.boxShadow = 'none';
+                textArea.style.background = 'transparent';
+
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        copyBtn.innerText = 'Copied!';
+                        copyBtn.classList.remove('bg-cyan-600', 'hover:bg-cyan-700');
+                        copyBtn.classList.add('bg-green-500');
+                        
+                        setTimeout(() => {
+                            copyBtn.innerText = 'Copy';
+                            copyBtn.classList.remove('bg-green-500');
+                            copyBtn.classList.add('bg-cyan-600', 'hover:bg-cyan-700');
+                        }, 2000);
+                    }
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+
+                document.body.removeChild(textArea);
+            });
+
+            // New script for the interactive message box
+            const copyMessageBtn = document.getElementById('copyMessageBtn');
+    
+            copyMessageBtn.addEventListener('click', () => {
+                const userName = document.getElementById('userName').value;
+                const userEmail = document.getElementById('userEmail').value;
+                const userMobile = document.getElementById('userMobile').value;
+
+                if (!userName || !userEmail || !userMobile) {
+                    copyMessageBtn.innerText = 'সব তথ্য পূরণ করুন!';
+                    copyMessageBtn.classList.remove('bg-cyan-600', 'hover:bg-cyan-700');
+                    copyMessageBtn.classList.add('bg-red-600');
+                    setTimeout(() => {
+                        copyMessageBtn.innerText = 'তথ্য কপি করুন';
+                        copyMessageBtn.classList.remove('bg-red-600');
+                        copyMessageBtn.classList.add('bg-cyan-600', 'hover:bg-cyan-700');
+                    }, 3000);
+                    return;
+                }
+
+                const messageToCopy = `COURSE NO: TSA-01\nYOUR NAME: ${userName}\nYOUR E-mail: ${userEmail}\nYOUR Mobile No: ${userMobile}`;
+                
+                const textArea = document.createElement('textarea');
+                textArea.value = messageToCopy;
+                
+                textArea.style.position = 'fixed';
+                textArea.style.top = '0';
+                textArea.style.left = '0';
+                textArea.style.width = '2em';
+                textArea.style.height = '2em';
+                textArea.style.padding = '0';
+                textArea.style.border = 'none';
+                textArea.style.outline = 'none';
+                textArea.style.boxShadow = 'none';
+                textArea.style.background = 'transparent';
+
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        copyMessageBtn.innerText = 'কপি করা হয়েছে!';
+                        copyMessageBtn.classList.remove('bg-cyan-600', 'hover:bg-cyan-700');
+                        copyMessageBtn.classList.add('bg-green-500');
+                        
+                        setTimeout(() => {
+                            copyMessageBtn.innerText = 'তথ্য কপি করুন';
+                            copyMessageBtn.classList.remove('bg-green-500');
+                            copyMessageBtn.classList.add('bg-cyan-600', 'hover:bg-cyan-700');
+                        }, 3000);
+                    }
+                } catch (err) {
+                    console.error('Failed to copy message: ', err);
+                    copyMessageBtn.innerText = 'কপি করতে ব্যর্থ';
+                }
+
+                document.body.removeChild(textArea);
+            });
+        });
+    </script>
 
 </body>
 </html>
