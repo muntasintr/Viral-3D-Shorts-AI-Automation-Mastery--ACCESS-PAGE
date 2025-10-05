@@ -9,6 +9,9 @@
     <meta name="description" content="Welcome to your course access page at Tech Seeker Academy. Download your course materials and start learning.">
     <meta name="robots" content="noindex, nofollow"> <!-- Prevents this page from appearing in Google search results -->
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,6 +80,31 @@
             0%, 100% { text-shadow: 0 0 5px rgba(249, 115, 22, 0.4); }
             50% { text-shadow: 0 0 20px rgba(249, 115, 22, 1), 0 0 30px rgba(249, 115, 22, 0.7); }
         }
+        
+        /* UPDATED: Cyan Glow Effect for Course Title */
+        .glowing-cyan {
+            color: #22d3ee; /* Tailwind cyan-400 */
+            text-transform: uppercase;
+            animation: cyan-glow 2s infinite ease-in-out;
+        }
+        @keyframes cyan-glow {
+            0%, 100% { text-shadow: 0 0 8px rgba(34, 211, 238, 0.5); }
+            50% { text-shadow: 0 0 25px rgba(34, 211, 238, 1), 0 0 40px rgba(34, 211, 238, 0.8); }
+        }
+
+        /* NEW: Glowing Light Green Button */
+        .glowing-green-btn-light {
+            animation: green-btn-light-glow 2s infinite ease-in-out;
+        }
+        @keyframes green-btn-light-glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(34, 197, 94, 0.6), 0 0 20px rgba(34, 197, 94, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(34, 197, 94, 1), 0 0 40px rgba(34, 197, 94, 0.7);
+            }
+        }
+
     </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -84,7 +112,6 @@
     <!-- Header Section -->
     <header class="bg-black shadow-lg shadow-cyan-500/20">
         <div class="text-center px-4 header-container w-full">
-             <!-- ***** UPDATED LINK TO ABSOLUTE URL ***** -->
              <a href="https://techseekeracademy.com" class="header-title font-teko inline-block">
                 <span class="letter white">T</span><span class="letter white">E</span><span class="letter white">C</span><span class="letter white">H</span>
                 <span class="letter space"></span>
@@ -100,9 +127,13 @@
         
         <!-- Welcome Message -->
         <div class="text-center mb-12">
-            <!-- Updated Course Name for consistency -->
-            <h1 class="text-4xl md:text-5xl font-bold text-purple-400 font-bangla">"Viral 3D Shorts AI Automation Mastery- Dominate USA Market" কোর্সে আপনাকে স্বাগতম!</h1>
-            <p class="text-2xl md:text-3xl font-bold glowing-orange font-bangla mt-4">অভিনন্দন! আপনি আপনার জীবনের সেরা সিদ্ধান্তটি নিয়েছেন।</p>
+            <!-- UPDATED Course Title and Welcome Message -->
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+                <span class="glowing-cyan">🔥 VIRAL 3D SHORTS AI AUTOMATION MASTERY</span>
+            </h1>
+            <p class="text-4xl md:text-5xl font-bold text-purple-400 font-bangla mt-4">কোর্সে আপনাকে স্বাগতম!</p>
+            
+            <p class="text-2xl md:text-3xl font-bold glowing-orange font-bangla mt-8">অভিনন্দন! আপনি আপনার জীবনের সেরা সিদ্ধান্তটি নিয়েছেন।</p>
             <p class="text-xl text-gray-300 mt-4 font-bangla">আপনার সফলতার যাত্রায় আমরা আপনাকে স্বাগত জানাই। নিচে আপনার কোর্সের ওয়েলকাম ভিডিও এবং প্রয়োজনীয় রিসোর্স দেওয়া হলো।</p>
         </div>
 
@@ -128,10 +159,8 @@
                 <p class="text-lg text-gray-300 mb-6 font-bangla">
                     এই ফোল্ডারের ভেতর কোর্সটি করার জন্য প্রয়োজনীয় সফটওয়্যার এবং গাইডলাইন দেওয়া আছে।
                 </p>
-                <!-- 
-                    Mega.nz folder link has been updated below.
-                -->
-                <a href="https://mega.nz/folder/JkB02TxJ#OUrODtpqeC7tUQhVBpgUWQ" target="_blank" class="inline-flex items-center justify-center bg-green-600 text-white font-bold text-xl py-4 px-8 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/40">
+                <!-- UPDATED Download Button with glow -->
+                <a href="https://mega.nz/folder/JkB02TxJ#OUrODtpqeC7tUQhVBpgUWQ" target="_blank" class="inline-flex items-center justify-center bg-green-600 text-white font-bold text-xl py-4 px-8 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 glowing-green-btn-light">
                     <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     ডাউনলোড করুন (Course Folder)
                 </a>
