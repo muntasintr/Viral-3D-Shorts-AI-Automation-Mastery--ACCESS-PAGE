@@ -104,6 +104,11 @@
                 box-shadow: 0 0 25px rgba(34, 197, 94, 1), 0 0 40px rgba(34, 197, 94, 0.7);
             }
         }
+        
+        /* The custom mute button is now hidden as we are using default controls */
+        #mute-course-video {
+           display: none;
+        }
 
     </style>
 </head>
@@ -115,7 +120,7 @@
              <a href="https://techseekeracademy.com" class="header-title font-teko inline-block">
                 <span class="letter white">T</span><span class="letter white">E</span><span class="letter white">C</span><span class="letter white">H</span>
                 <span class="letter space"></span>
-                <span class="letter orange">S</span><span class="letter orange">E</span><span class="letter orange">E</span><span class="letter orange">K</span><span class="letter orange">E</span><span class="letter orange">R</span>
+                <span class="letter orange">S</span><span class="letter orange">E</span><span class="letter orange">K</span><span class="letter orange">E</span><span class="letter orange">R</span>
                 <span class="letter space"></span>
                 <span class="letter white spark-source">ACADEMY</span>
             </a>
@@ -141,14 +146,10 @@
         <section class="mb-16">
             <h2 class="text-3xl font-bold text-purple-400 mb-6 text-center font-bangla">আপনার জন্য একটি বিশেষ বার্তা</h2>
             <div class="video-container bg-black rounded-xl shadow-lg shadow-purple-500/30 mx-auto max-w-4xl border-2 border-purple-800">
-                <!-- 
-                    নির্দেশিকা: 
-                    1. আপনার আনলিস্টেড ইউটিউব ভিডিও-তে যান।
-                    2. 'Share' বাটনে ক্লিক করুন, তারপর 'Embed' অপশনটি সিলেক্ট করুন।
-                    3. Embed code-এর src="" এট্রিবিউটের ভেতর থেকে শুধু ভিডিও ID-টি (যেমন: dQw4w9WgXcQ) কপি করুন।
-                    4. নিচের "YOUR_UNLISTED_VIDEO_ID" লেখাটির জায়গায় আপনার কপি করা ID-টি পেস্ট করুন।
-                -->
-                <iframe src="https://www.youtube.com/embed/YOUR_UNLISTED_VIDEO_ID" title="Course Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- This div is where the YouTube player will be inserted by JavaScript -->
+                <div id="course-video-player"></div>
+                <!-- This is the custom mute/unmute button -->
+                <button id="mute-course-video"></button>
             </div>
         </section>
 
@@ -180,6 +181,43 @@
              <p>&copy; 2025 TECH SEEKER ACADEMY. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- YouTube IFrame API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <!-- NEW: JavaScript for Custom YouTube Player -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let coursePlayer;
+            const videoId = 's1wW81DqfOQ'; // Your unlisted YouTube video ID goes here
+            
+            // This function creates the player after the API script downloads.
+            window.onYouTubeIframeAPIReady = function() {
+                coursePlayer = new YT.Player('course-video-player', {
+                    height: '100%',
+                    width: '100%',
+                    videoId: videoId,
+                    playerVars: {
+                        'autoplay': 1,
+                        'mute': 1, // Start muted to allow autoplay
+                        'controls': 1, // <-- CHANGED FROM 0 TO 1 TO SHOW CONTROLS
+                        'rel': 0,
+                        'showinfo': 0,
+                        'loop': 1,
+                        'playlist': videoId // Important for looping a single video
+                    },
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+
+            // The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                event.target.playVideo(); // Ensure it plays
+            }
+        });
+    </script>
 
 </body>
 </html>
